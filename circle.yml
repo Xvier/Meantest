@@ -4,6 +4,7 @@ dependencies:
 test:
   override:
    - npm test
+   - npm start
    - cypress ci
 deployment:
   staging:
