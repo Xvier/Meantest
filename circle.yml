@@ -2,9 +2,13 @@ dependencies:
   pre:
    - npm install -g cypress-cli
 test:
-  pre:
-  - npm start:
-    background: true
+   pre:
+      ## runs the 'start' script which
+      ## boots our local app server on port 8080
+      ## which cypress expects to be running
+      - npm start:
+          background: true
+
    override:
    - npm test
    - cypress ci
