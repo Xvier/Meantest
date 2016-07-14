@@ -1,12 +1,10 @@
 dependencies:
   pre:
-    npm install -g cypress-cli
+   - npm install -g cypress-cli
 test:
   override:
-   cypress ci
-
-
-
+   - npm test
+   - cypress ci
 deployment:
   staging:
     branch: master
