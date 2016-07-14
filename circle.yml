@@ -2,9 +2,11 @@ dependencies:
   pre:
    - npm install -g cypress-cli
 test:
-  override:
+  pre:
+  - npm start:
+    background: true
+   override:
    - npm test
-   - npm start
    - cypress ci
 deployment:
   staging:
