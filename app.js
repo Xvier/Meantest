@@ -1,10 +1,30 @@
 var express = require('express');
 var app = express();
+var path = require('path');
+var bodyParser = require('body-parser')
+var morgan = require('morgan');
+var responseTime = require('response-time');
 
-app.get('/', function(req, res){
-    res.send('Hello World!');
+
+
+var routes = require('./routes/index');
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+app.use(responseTime());
+app.use(morgan('combined'));
+app.use(bodyParser.json());
+
+
+app.use('/', routes);
+
+app.use(function(req, res, next) {
+    res.status(404).send('Sorry cant find that!');
 });
+
 
 app.listen(process.env.PORT || '3000', function () {
     console.log('Example app listening on port 3000!');
 });
+
