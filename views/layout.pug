@@ -1,7 +1,35 @@
 doctype html
 html
     head
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons"')
+        link(rel='stylesheet', href='/css/style.css')
+        link(rel='stylesheet', href='/css/materialize.css')
+    header
+        nav
+            .nav-wrapper.container
+                a.brand-logo(href='#') Logo
+                ul#nav-mobile.right.hide-on-small-and-down
+                    li
+                        a(href='#') Home
+                    li
+                        a(href='#') Components
+                    li
+                        a(href='#') JavaScript
+    main
+        block content
 
-    body
-        h1 Xavier is here
-    block content
+    footer.page-footer.light-blue
+        .container
+            .row
+                .col.l6.s12
+                    p.
+                        &copy; 2016, All rights reserved
+                .col.l6.s12
+                    p.
+                        Other text
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+    script(src='/js/materialize.js')
+
